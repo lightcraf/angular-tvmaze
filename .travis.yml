@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "12.0"
+  - "12.16.2"
 branches:
   only:
     - master
@@ -12,6 +12,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: ed0dc16362c144e179e3eb7f023a7ce0b40a4979
+  local_dir: docs
   keep_history: true
   on:
     branch: master
