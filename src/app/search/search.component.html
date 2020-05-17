@@ -1,5 +1,7 @@
 <h2 class="cards-section-title">Search result</h2>
+
 <section class="card-wrapper" *ngIf="searchResult">
+    <p *ngIf="searchResult.length === 0">No results found for {{searchValue}}</p>
     <article class="card" *ngFor="let data of searchResult">
         <a [routerLink]="'/show/' + data.show.id">
             <img class="card__img" src="{{data.show.image?.medium || 'assets/no-img-portrait-text.png'}}" alt="{{data.show.name}}" />

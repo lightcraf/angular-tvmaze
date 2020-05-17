@@ -10,7 +10,8 @@ import IShow from '../services/IShow';
 })
 export class SearchComponent implements OnInit {
 
-  searchResult: IShow;
+  searchResult: IShow[];
+  searchValue: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,11 +20,12 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      this.onSearchShow(params['q'])
+      this.searchValue = params['q'];
+      this.searchShow(params['q']);
     });
   }
 
-  onSearchShow(searchValue: string): void {
+  searchShow(searchValue: string): void {
     this.ShowsService.searchShow(searchValue).subscribe(data => {
       this.searchResult = data;
     });

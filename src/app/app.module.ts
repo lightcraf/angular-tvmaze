@@ -13,6 +13,7 @@ import { ShowComponent } from './show/show.component';
 import { SearchComponent } from './search/search.component';
 import { ShowScheduleComponent } from './show-schedule/show-schedule.component';
 import { ShowsComponent } from './shows/shows.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ShowsComponent } from './shows/shows.component';
     ShowComponent,
     SearchComponent,
     ShowScheduleComponent,
-    ShowsComponent
+    ShowsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

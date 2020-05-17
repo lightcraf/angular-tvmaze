@@ -21,13 +21,13 @@ export class ShowsService {
     return this.http.get<IShow[]>('http://api.tvmaze.com/shows', { headers: responseHeader });
   }
 
-  searchShow(query): Observable<IShow> {
+  searchShow(query): Observable<IShow[]> {
     const responseHeader = new HttpHeaders();
     responseHeader.set("Access-Control-Allow-Origin", "http://api.tvmaze.com");
     responseHeader.set("Access-Control-Allow-Headers:", "Content-Type");
     responseHeader.set("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");
     responseHeader.set("Content-Type", "application/json");
-    return this.http.get<IShow>('http://api.tvmaze.com/search/shows?q=' + query, { headers: responseHeader });
+    return this.http.get<IShow[]>('http://api.tvmaze.com/search/shows?q=' + query, { headers: responseHeader });
   }
 
   getShow(id): Observable<IShow> {
@@ -39,13 +39,13 @@ export class ShowsService {
     return this.http.get<IShow>('http://api.tvmaze.com/shows/' + id, { headers: responseHeader });
   }
 
-  getLastVisitedShows() {
+  getLastVisitedShows(): IShow[] | [] {
     return JSON.parse(localStorage.getItem('lastVisitedShows')) || [];
   }
 
   setLastVisitedShows(show: IShow): void {
     const showList = JSON.parse(localStorage.getItem('lastVisitedShows')) || [];
-    const index = showList.findIndex(item => {
+    const index: number = showList.findIndex(item => {
       return item.id === show.id;
     });
 
