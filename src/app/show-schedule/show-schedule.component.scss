@@ -1,0 +1,42 @@
+.schedule-wrapper {
+    overflow-x: auto;
+    padding: 30px 10px 20px 10px;
+}
+
+.schedule-table {
+    border-collapse: collapse;
+    width: 100%;
+
+    &__row:not(&__day-row):hover {
+        background-color: #ddd;
+    }
+
+    &__head {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #416f6a;
+        color: #fff;
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    &__data {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    &__day-row {
+        background-color: #3f3f3f;
+        color: #fff;
+        text-align: center;
+    }
+
+    a {
+        color: #000;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

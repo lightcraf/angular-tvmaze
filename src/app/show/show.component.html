@@ -1,0 +1,21 @@
+<div class="show" *ngIf="showData">
+    <div class="show__poster-wrapper">
+        <img class="show__poster" src="{{showData.image?.original || 'assets/no-img-portrait-text.png'}}" alt="{{showData.name}}" />
+    </div>
+    <ul class="show__info">
+        <li>
+            <h2 class="show__info-item show__title">{{showData.name}}</h2>
+        </li>
+        <li>
+            <p class="show__info-item"><span>Genres:</span> {{showData.genres.join(", ")}}</p>
+        </li>
+        <li>
+            <p class="show__info-item"><span>Rating:</span> {{showData.rating.average}}</p>
+        </li>
+        <li>
+            <p class="show__info-item"><span>Premiered:</span> {{showData.premiered}}</p>
+        </li>
+        <li innerHTML = "{{showData.summary}}">
+        </li>
+    </ul>
+</div>

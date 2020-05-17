@@ -1,0 +1,27 @@
+<div class="schedule-wrapper">
+    <table class="schedule-table">
+        <thead>
+            <tr class="schedule-table__row">
+                <th class="schedule-table__head">Time</th>
+                <th class="schedule-table__head">Channel</th>
+                <th class="schedule-table__head">Name</th>
+                <th class="schedule-table__head">Running time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let day of days">
+                <tr class="schedule-table__row schedule-table__day-row">
+                    <td class="schedule-table__data" colspan="4">{{day}}</td>
+                </tr>
+                <ng-container *ngFor="let show of runningShows">
+                    <tr *ngIf="show.schedule.days.indexOf(day) > -1" class="schedule-table__row">
+                        <td class="schedule-table__data">{{show.schedule.time}}</td>
+                        <td class="schedule-table__data">{{show.network.name}}</td>
+                        <td class="schedule-table__data"><a [routerLink]="'/show/' + show.id">{{show.name}}</a></td>
+                        <td class="schedule-table__data">{{show.runtime}}</td>
+                    </tr>
+                </ng-container>
+            </ng-container>
+        </tbody>
+    </table>
+</div>

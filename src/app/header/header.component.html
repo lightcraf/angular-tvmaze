@@ -1,0 +1,25 @@
+<div class="header-wrapper">
+    <header class="container header">
+        <a routerLink="/" class="logo">
+            <img class="img logo__img" src="assets/tvm-header-logo.png" alt="logo" title="Keep track of your shows"/>
+        </a>
+        <div class="search-wrapper">
+            <form [formGroup]="searchShowForm" (ngSubmit)="onSearchShow()">
+                <div class="search">
+                    <input class="search__field" formControlName="search" type="search"/>
+                    <button class="search__btn" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </header>
+    <div class="header-menu">
+        <ul class="header-menu__list">
+            <li class="header-menu__item">
+                <a routerLink="shows" class="header-menu__link">Shows</a>
+            </li>
+            <li class="header-menu__item">
+                <a routerLink="schedule" class="header-menu__link">Schedule</a>
+            </li>
+        </ul>
+    </div>
+</div>

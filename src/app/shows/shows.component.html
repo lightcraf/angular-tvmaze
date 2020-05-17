@@ -1,0 +1,26 @@
+<div class="shows-wrapper">
+    <ul class="genre-nav">
+        <li class="genre-nav__item" *ngFor="let genre of genreList">
+            <a [routerLink]="" 
+                [queryParams]="{genre: genre.toLowerCase()}" 
+                [ngClass]="genre.toLowerCase() === genreParam ? 'genre-nav__link active' : 'genre-nav__link'">
+                {{genre}}
+            </a>
+        </li>
+    </ul>
+    <div class="shows">
+        <p class="shows__genre">{{genreParam}}</p>
+        <section class="card-wrapper">
+            <article class="card" *ngFor="let show of newShows">
+                <a [routerLink]="'/show/' + show.id">
+                    <img class="card__img" src="{{show.image?.medium || 'assets/no-img-portrait-text.png'}}" alt="{{show.name}}" />
+                </a>
+                <header class="card__header">
+                    <h3 class="card__title">
+                        <a [routerLink]="'/show/' + show.id">{{show.name}}</a>
+                    </h3>
+                </header>
+            </article>
+        </section>
+    </div>
+</div>

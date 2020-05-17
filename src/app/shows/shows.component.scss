@@ -1,0 +1,42 @@
+.shows-wrapper {
+    display: flex;
+    margin: 25px 10px;
+
+    @media all and (max-width: 576px) {
+        flex-direction: column;
+    }
+}
+
+.shows {
+    &__genre {
+        font-size: 24px;
+        text-transform: capitalize;
+        margin: 0 0 5px 10px;
+    }
+}
+
+.genre-nav {
+    min-width: 180px;
+
+    &__item {
+        margin: 6px 0;
+
+        @media all and (max-width: 576px) {
+            display: inline-block;
+            margin: 2px 4px;
+        }
+    }
+
+    &__link {
+        color: #000;
+
+        &:hover {
+            color: #3c948b;
+        }
+
+        &.active {
+            font-weight: 600;
+            color: #3c948b;
+        }
+    }
+}
