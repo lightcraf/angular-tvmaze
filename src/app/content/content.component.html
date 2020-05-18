@@ -2,7 +2,9 @@
 <section class="card-wrapper">
     <article class="card" *ngFor="let show of popularShows">
         <a [routerLink]="'show/' + show.id">
-            <img class="card__img" src="{{show.image?.medium || 'assets/no-img-portrait-text.png'}}" alt="{{show.name}}" />
+            <img class="card__img" 
+                src="{{show.image?.medium.replace('http:', 'https:') || 'assets/no-img-portrait-text.png'}}" 
+                alt="{{show.name}}" />
         </a>
         <header class="card__header">
             <h3 class="card__title">
@@ -16,7 +18,9 @@
 <section class="card-wrapper" *ngIf="lastVisitedShows">
     <article class="card" *ngFor="let data of lastVisitedShows">
         <a [routerLink]="'show/' + data.id">
-            <img class="card__img" src="{{data.image?.medium || 'assets/no-img-portrait-text.png'}}" alt="{{data.name}}" />
+            <img class="card__img" 
+                src="{{data.image?.medium.replace('http:', 'https:') || 'assets/no-img-portrait-text.png'}}" 
+                alt="{{data.name}}" />
         </a>
         <header class="card__header">
             <h3 class="card__title">

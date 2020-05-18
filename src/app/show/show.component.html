@@ -1,6 +1,8 @@
 <div class="show" *ngIf="showData">
     <div class="show__poster-wrapper">
-        <img class="show__poster" src="{{showData.image?.original || 'assets/no-img-portrait-text.png'}}" alt="{{showData.name}}" />
+        <img class="show__poster" 
+            src="{{showData.image?.original.replace('http:', 'https:') || 'assets/no-img-portrait-text.png'}}" 
+            alt="{{showData.name}}" />
     </div>
     <ul class="show__info">
         <li>

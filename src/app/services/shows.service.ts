@@ -14,29 +14,29 @@ export class ShowsService {
 
   getShows(): Observable<IShow[]> {
     const responseHeader = new HttpHeaders();
-    responseHeader.set("Access-Control-Allow-Origin", "http://api.tvmaze.com");
+    responseHeader.set("Access-Control-Allow-Origin", "https://api.tvmaze.com");
     responseHeader.set("Access-Control-Allow-Headers:", "Content-Type");
     responseHeader.set("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");
     responseHeader.set("Content-Type", "application/json");
-    return this.http.get<IShow[]>('http://api.tvmaze.com/shows', { headers: responseHeader });
+    return this.http.get<IShow[]>('https://api.tvmaze.com/shows', { headers: responseHeader });
   }
 
   searchShow(query): Observable<IShow[]> {
     const responseHeader = new HttpHeaders();
-    responseHeader.set("Access-Control-Allow-Origin", "http://api.tvmaze.com");
+    responseHeader.set("Access-Control-Allow-Origin", "https://api.tvmaze.com");
     responseHeader.set("Access-Control-Allow-Headers:", "Content-Type");
     responseHeader.set("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");
     responseHeader.set("Content-Type", "application/json");
-    return this.http.get<IShow[]>('http://api.tvmaze.com/search/shows?q=' + query, { headers: responseHeader });
+    return this.http.get<IShow[]>('https://api.tvmaze.com/search/shows?q=' + query, { headers: responseHeader });
   }
 
   getShow(id): Observable<IShow> {
     const responseHeader = new HttpHeaders();
-    responseHeader.set("Access-Control-Allow-Origin", "http://api.tvmaze.com");
+    responseHeader.set("Access-Control-Allow-Origin", "https://api.tvmaze.com");
     responseHeader.set("Access-Control-Allow-Headers:", "Content-Type");
     responseHeader.set("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");
     responseHeader.set("Content-Type", "application/json");
-    return this.http.get<IShow>('http://api.tvmaze.com/shows/' + id, { headers: responseHeader });
+    return this.http.get<IShow>('https://api.tvmaze.com/shows/' + id, { headers: responseHeader });
   }
 
   getLastVisitedShows(): IShow[] | [] {

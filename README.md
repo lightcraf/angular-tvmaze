@@ -1,5 +1,8 @@
 # AngularTvmaze
 
+## GitHub Pages
+https://lightcraf.github.io/angular-tvmaze/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 
 ## Development server
